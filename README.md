@@ -23,7 +23,8 @@ php artisan vendor:publish --provider="WebConfig\WCServiceProvider"
 $array = ['resident' => $sluuid];
 $length = 24;
 $code = WebConfig::genCode($array, $length);
-// $code generates a code of $length that lasts for default 10 minutes which can be configured in the gpwebconfig.php
+// $code generates a code of $length that lasts for default 10 minutes
+// expiration can be configured in the gpwebconfig.php
 
 // To validate code and get $array
 if ($valid = WebConfig::ValidateCode($code)) {
