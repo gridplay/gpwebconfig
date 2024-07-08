@@ -1,0 +1,44 @@
+{
+    "name": "gridplay/gpwebconfig",
+    "type": "library",
+    "description": "WebConfig system for GridPlay",
+    "keywords": ["webconfig","gridplay"],
+    "license": "",
+    "authors": [
+        {
+            "name": "Chris Strachan",
+            "email": "chrisx84@live.ca",
+            "homepage": "https://github.com/Chrisx84"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "guzzlehttp/guzzle": "^7.0",
+        "illuminate/support": "^11.0"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "WebConfig\\WCServiceProvider"
+            ],
+            "aliases": {
+                "WebConfig": "WebConfig\\WebConfig"
+            }
+
+        }
+    },
+    "autoload": {
+        "files": [],
+        "psr-4": {
+            "WebConfig\\": "src"
+        },
+        "classmap": []
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
