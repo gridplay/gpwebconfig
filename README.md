@@ -4,6 +4,16 @@ Laravel 11 or higher required
 
 This package is so SecondLife residents can edit their inworld products through a webconfig. 
 Designed to be used for GridPlay Productions
+```json
+    "repositories": [{
+            "type": "vcs", 
+            "url": "https://github.com/gridplay/gpwebconfig"
+        }
+    ],
+    "require": {
+        "gridplay/gpwebconfig": "dev-main",
+    }
+```
 
 ```sh
 php artisan vendor:publish --provider="WebConfig\WCServiceProvider"
