@@ -3,7 +3,7 @@
 Laravel 11 or higher required
 
 This package is so SecondLife residents can edit their inworld products through a webconfig. 
-Designed to be used for GridPlay Productions
+Designed to be used for GridPlay Productions. Frontend coding required!
 ```json
     "repositories": [{
             "type": "vcs", 
