@@ -18,13 +18,15 @@ class WebConfig {
 		$seconds = config('gpwebconfig.expiration') * 60;
 		$expire = time() + $seconds;
 		$data['code_expire'] = $expire;
-		if (Storage::put($code.'.json', json_encode($data))) {
+		$folder = config('gpwebconfig.folder');
+		if (Storage::put($folder.'/'.$code.'.json', json_encode($data))) {
 			return $code;
 		}
 		return "";
 	}
 	public static function ValidateCode($code) {
-		$s = Storage::json($code.".json");
+		$folder = config('gpwebconfig.folder');
+		$s = Storage::json($folder.'/'.$code.".json");
 		if (is_array($s)) {
 			$expire = time();
 			if (array_key_exists('code_expire', $s)) {
@@ -37,7 +39,8 @@ class WebConfig {
 		return null;
 	}
 	public static function getExpiration($code) {
-		$s = Storage::json($code.'.json');
+		$folder = config('gpwebconfig.folder');
+		$s = Storage::json($folder.'/'.$code.'.json');
 		if (is_array($s)) {
 			if (array_key_exists('code_expire', $s)) {
 				return $s['code_expire'];
@@ -46,7 +49,8 @@ class WebConfig {
 		return 0;
 	}
 	public static function deleteCode($code) {
-		if (Storage::exists($code.'.json')) {
+		$folder = config('gpwebconfig.folder');
+		if (Storage::exists($folder.'/'.$code.'.json')) {
 			Storage::delete([$code.'.json']);
 		}
 	}

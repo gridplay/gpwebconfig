@@ -5,4 +5,7 @@ return [
 
 	// how long in minutes to expire the code, default is 10 minutes
 	'expiration' => 10,
+
+	// storage folder to store the token data in
+	'folder' => 'webconfig'
 ];
