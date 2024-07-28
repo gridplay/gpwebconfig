@@ -1,5 +1,5 @@
 <?php
-namespace GridPay;
+namespace WebConfig;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 class WCServiceProvider extends ServiceProvider {
